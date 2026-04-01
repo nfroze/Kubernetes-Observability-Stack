@@ -40,19 +40,35 @@ The monitoring pipeline flows from Prometheus scraping pod and node metrics on a
 
 ## Screenshots
 
-![](screenshots/terraform-apply.png)
+**Terraform Apply Output** — The successful provisioning of the EKS cluster and supporting infrastructure, showing 50 resources added with cluster endpoint, name, security group ID, and region outputs displayed in the terminal.
+
+![](screenshots/terraform-output.png)
+
+**EKS Cluster Details** — AWS Management Console view of the observability-dev cluster showing cluster information, resource counts, node group details (aws-node-4b25p with 2/2 nodes running), and the Subnets and Networking tab displaying the infrastructure topology.
 
 ![](screenshots/eks-cluster.png)
 
-![](screenshots/all-pods-running.png)
+**All Pods Running** — Terminal output of `kubectl get pods --all-namespaces` displaying 18 running pods across the monitoring and logging namespaces, including Prometheus components, Grafana, Elasticsearch, Kibana, Logstash, Fluentd, and the sample Nginx application, each with their container readiness status and uptime.
+
+![](screenshots/cluster-pods.png)
+
+**Prometheus Targets** — Prometheus web UI showing all monitored targets with their scrape status and health checks, displaying endpoint groups for Kubernetes API server, kubelet, node-exporter, and prometheus itself, all showing green "UP" status indicating successful metric collection.
 
 ![](screenshots/prometheus-targets.png)
 
+**Grafana Dashboards** — Grafana monitoring dashboard displaying system metrics including CPU usage (2.07%), load averages (13.0%), memory utilization (21.8%), and time-series graphs for CPU and memory trends across the cluster over the monitoring period.
+
 ![](screenshots/grafana-dashboard.png)
+
+**Kibana Welcome Home** — Kibana landing page showing the four main features: Enterprise Search, Observability, Security, and Analytics, along with management sections for permissions, dev tools, and index lifecycle management, ready for log exploration.
 
 ![](screenshots/kibana-homepage.png)
 
+**Kibana Discover Logs** — Kibana's Discover view displaying 41,221 log entries with a detailed timeline and log records visible, showing timestamps, Kubernetes metadata enrichment, and containerized application log messages flowing from Fluentd through Elasticsearch.
+
 ![](screenshots/kibana-discover-logs.png)
+
+**GitHub Repository Branches** — Project repository showing five active feature branches (feature/documentation, feature/log-collection, feature/logging-stack, feature/monitoring-stack, and feature/terraform-infrastructure) with their update times and associated pull requests, demonstrating the development workflow.
 
 ![](screenshots/git-branches.png)
 
