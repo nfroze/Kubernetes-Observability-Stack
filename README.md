@@ -48,7 +48,7 @@ The monitoring pipeline flows from Prometheus scraping pod and node metrics on a
 
 ![](screenshots/eks-cluster.png)
 
-**All Pods Running** — Terminal output of `kubectl get pods --all-namespaces` displaying 18 running pods across the monitoring and logging namespaces, including Prometheus components, Grafana, Elasticsearch, Kibana, Logstash, Fluentd, and the sample Nginx application, each with their container readiness status and uptime.
+**Cluster Pods** — Terminal output of `kubectl get pods --all-namespaces` displaying 19 running pods across default, kube-system, logging, and monitoring namespaces, including Prometheus components, Grafana, Elasticsearch, Kibana, Logstash, Fluentd, and the sample application replicas, each with their container readiness status and uptime.
 
 ![](screenshots/cluster-pods.png)
 
