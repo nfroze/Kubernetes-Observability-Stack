@@ -12,8 +12,6 @@ A sample Nginx application generates the traffic and logs that flow through both
 
 ## Architecture
 
-![](screenshots/cloud-architecture.png)
-
 The system runs inside a VPC with two availability zones. EKS worker nodes sit in private subnets with outbound access through a NAT gateway, while LoadBalancer services expose Grafana, Kibana, and Prometheus for operator access.
 
 The monitoring pipeline flows from Prometheus scraping pod and node metrics on a pull model, with Grafana querying Prometheus as its datasource for dashboards. The logging pipeline flows from Fluentd DaemonSets tailing `/var/log/containers` on each node, enriching logs with Kubernetes metadata, and forwarding them to Elasticsearch where Kibana provides search and visualization. Logstash sits alongside as a parallel ingestion path accepting beats input on port 5044.
